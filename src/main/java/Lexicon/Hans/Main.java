@@ -23,5 +23,9 @@ public class Main {
             System.out.println(specificDate);
             specificDate = specificDate.plusDays(1);
         }
+
+        //Exercise 4: Create a LocalDate object from a String by using the .parse() method.
+        LocalDate parseTheString = LocalDate.parse("1999-12-30");
+        System.out.println("Created by .parse() method: " + parseTheString);
     }
 }
