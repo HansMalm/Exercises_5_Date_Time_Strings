@@ -16,5 +16,12 @@ public class Main {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("eeee dd MMMM");
         String formattedTime = currentDate.format(formatter);
         System.out.println(formattedTime);
+
+        //Exercise 3: Print out the last weeks dates in standard yyyy-mm-dd format.
+        LocalDate specificDate = LocalDate.of(2026, 02, 23);
+        for (int i=0; i<7; i++) {
+            System.out.println(specificDate);
+            specificDate = specificDate.plusDays(1);
+        }
     }
 }
