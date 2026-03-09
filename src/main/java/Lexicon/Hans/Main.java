@@ -32,5 +32,14 @@ public class Main {
         LocalDate birthDay = LocalDate.of(1986, 9, 14);
         formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd->eeee");
         System.out.println("\n" + birthDay.format(formatter));
+
+        //Exercise 6: Print out the month enum of the current date plus 10 years and minus 10 months.
+        LocalDate futureDate = LocalDate.now();
+        LocalDate pastDate = LocalDate.now();
+        futureDate = futureDate.plusYears(10);
+        pastDate = pastDate.minusMonths(10);
+        formatter = DateTimeFormatter.ofPattern("MMMM");
+        System.out.println("\nFuture date month: " + futureDate.format(formatter));
+        System.out.println("Past date month: " + pastDate.format(formatter));
     }
 }
