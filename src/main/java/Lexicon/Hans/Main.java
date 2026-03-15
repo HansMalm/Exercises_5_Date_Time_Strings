@@ -4,6 +4,7 @@ import java.time.Period;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
@@ -46,5 +47,17 @@ public class Main {
         Period timePeriod = Period.between(birthDay, futureDate);
         System.out.println("\n" + timePeriod.getYears() + " years, " + timePeriod.getMonths() + " months and " +
                 timePeriod.getDays() + " days.");
+
+        //Exercise 8: Create a Period of 4y, 7m, 29d. Then add the period to a LocalDate of the current date.
+        Period period8Exercise = Period.of(4,7,29);
+        LocalDate currentDatePeriod = LocalDate.now();
+        currentDatePeriod = currentDate.plus(period8Exercise);
+
+        //Exercise 9: Create a LocalTime object of the current time.
+        LocalTime currentTime = LocalTime.now();
+
+        //Exercise 10: Print the nanoseconds from the current time.
+        int nanoSeconds = currentTime.getNano();
+        System.out.println(nanoSeconds + "\n nanoseconds.");
     }//Main
 }
