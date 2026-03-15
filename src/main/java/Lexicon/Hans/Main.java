@@ -52,12 +52,20 @@ public class Main {
         Period period8Exercise = Period.of(4,7,29);
         LocalDate currentDatePeriod = LocalDate.now();
         currentDatePeriod = currentDate.plus(period8Exercise);
+        System.out.println("\ncurrentDatePeriod: " + currentDatePeriod);
 
         //Exercise 9: Create a LocalTime object of the current time.
         LocalTime currentTime = LocalTime.now();
+        System.out.println("\ncurrentTime: " + currentTime);
 
         //Exercise 10: Print the nanoseconds from the current time.
         int nanoSeconds = currentTime.getNano();
-        System.out.println(nanoSeconds + "\n nanoseconds.");
+        System.out.println("\n" + nanoSeconds + " nanoseconds.");
+
+        //Exercise 11: Create a LocalTime from String.
+        LocalTime stringTime = LocalTime.parse("11:30:00");
+        System.out.println("\nstringTime: " + stringTime);
+
+
     }//Main
 }
