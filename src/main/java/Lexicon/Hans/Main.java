@@ -1,5 +1,6 @@
 package Lexicon.Hans;
 
+import java.time.Period;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -35,11 +36,15 @@ public class Main {
 
         //Exercise 6: Print out the month enum of the current date plus 10 years and minus 10 months.
         LocalDate futureDate = LocalDate.now();
-        LocalDate pastDate = LocalDate.now();
         futureDate = futureDate.plusYears(10);
-        pastDate = pastDate.minusMonths(10);
+        futureDate = futureDate.minusMonths(10);
         formatter = DateTimeFormatter.ofPattern("MMMM");
         System.out.println("\nFuture date month: " + futureDate.format(formatter));
-        System.out.println("Past date month: " + pastDate.format(formatter));
-    }
+
+        //Exercise 7: Create a Period and print out the years, months and dates elapsed between your birthday
+        // and the future date from exercise 6.
+        Period timePeriod = Period.between(birthDay, futureDate);
+        System.out.println("\n" + timePeriod.getYears() + " years, " + timePeriod.getMonths() + " months and " +
+                timePeriod.getDays() + " days.");
+    }//Main
 }
