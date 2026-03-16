@@ -16,7 +16,7 @@ public class Main {
         //Exercise 2: Print out the current date using DateTimeFormatter.
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("eeee dd MMMM");
         String formattedTime = currentDate.format(formatter);
-        System.out.println(formattedTime + "\n");
+        System.out.println("\n" + formattedTime + "\n");
 
         //Exercise 3: Print out the last weeks dates in standard yyyy-mm-dd format.
         LocalDate specificDate = LocalDate.of(2026, 2, 23);
@@ -72,5 +72,9 @@ public class Main {
         //Exercise 13: Create a LocalDateTime with components as: 2018-04-05, 10:00.
         LocalDateTime componentsDateTime = LocalDateTime.of(2018, 4, 5, 10, 0);
         System.out.println("\nSpecified DateTime: " + componentsDateTime);
+
+        //Exercise 14: Format the LocalDateTime from exercise 13 to "torsdag 5 april 10:00.
+        formatter = DateTimeFormatter.ofPattern("eeee d MMMM hh:mm");
+        System.out.println("\nFormatted DateTime: " + componentsDateTime.format(formatter));
     }//Main
 }
