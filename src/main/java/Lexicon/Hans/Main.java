@@ -73,8 +73,12 @@ public class Main {
         LocalDateTime componentsDateTime = LocalDateTime.of(2018, 4, 5, 10, 0);
         System.out.println("\nSpecified DateTime: " + componentsDateTime);
 
-        //Exercise 14: Format the LocalDateTime from exercise 13 to "torsdag 5 april 10:00.
+        //Exercise 14: Format the LocalDateTime from exercise 13 to "torsdag 5 april 10:00".
         formatter = DateTimeFormatter.ofPattern("eeee d MMMM hh:mm");
         System.out.println("\nFormatted DateTime: " + componentsDateTime.format(formatter));
+
+        //Exercise 15: Create a LocalDateTime by combining Date and Time Objects.
+        LocalDateTime combinedDateTime = LocalDateTime.of(currentDate, currentTime);
+        System.out.println("\nCombined Date Time: " + combinedDateTime);
     }//Main
 }
