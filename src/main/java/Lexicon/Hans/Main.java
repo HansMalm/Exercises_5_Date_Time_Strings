@@ -80,5 +80,10 @@ public class Main {
         //Exercise 15: Create a LocalDateTime by combining Date and Time Objects.
         LocalDateTime combinedDateTime = LocalDateTime.of(currentDate, currentTime);
         System.out.println("\nCombined Date Time: " + combinedDateTime);
+
+        //Exercise 16: Extract Date and Time Objects from a LocalDateTime.
+        LocalDate extractedDate = combinedDateTime.toLocalDate();
+        LocalTime extractedTime = combinedDateTime.toLocalTime();
+        System.out.println("\nExtracted Date: " + extractedDate + "\nExtracted Time :" + extractedTime);
     }//Main
 }
