@@ -4,7 +4,6 @@ import java.time.Period;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
@@ -27,8 +26,8 @@ public class Main {
         }
 
         //Exercise 4: Create a LocalDate object from a String by using the .parse() method.
-        LocalDate parseTheString = LocalDate.parse("1999-12-30");
-        System.out.println("\nCreated by .parse() method: " + parseTheString);
+        LocalDate stringDate = LocalDate.parse("1999-12-30");
+        System.out.println("\nstringDate: " + stringDate);
 
         //Exercise 5: Create a LocalDate of your birthday and print the day enum of that date.
         LocalDate birthDay = LocalDate.of(1986, 9, 14);
@@ -66,6 +65,8 @@ public class Main {
         LocalTime stringTime = LocalTime.parse("11:30:00");
         System.out.println("\nstringTime: " + stringTime);
 
-
+        //Exercise 12: Format a LocalTime with the pattern: 10:32:53.
+        formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
+        System.out.println("\nPattern formatted time: " + currentTime.format(formatter));
     }//Main
 }
