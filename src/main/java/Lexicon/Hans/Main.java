@@ -85,5 +85,36 @@ public class Main {
         LocalDate extractedDate = combinedDateTime.toLocalDate();
         LocalTime extractedTime = combinedDateTime.toLocalTime();
         System.out.println("\nExtracted Date: " + extractedDate + "\nExtracted Time :" + extractedTime);
+
+        //Exercise Extra Challenge: Create a calendar of the year 2018.
+        //Print out all days of the year, organized by month.
+        LocalDate calendar = LocalDate.of(2018, 1,1);
+        DateTimeFormatter monthFormat = DateTimeFormatter.ofPattern("MMMM");
+        DateTimeFormatter dayFormat = DateTimeFormatter.ofPattern("d");
+        System.out.println("\nCalendar of year 2018.");
+        System.out.println("Start Date: " + calendar);
+        for (int month=0; month<12; month++) {
+            System.out.println("\n" + calendar.format(monthFormat).toUpperCase() + " D:" + calendar.lengthOfMonth());
+            System.out.println("M  T  W  T  F  S  S");
+            boolean newWeekLine = false;
+            int newWeekCounter = 0;
+            for (int day=1; day<calendar.lengthOfMonth()+1; calendar = calendar.plusDays(1)){
+                if (newWeekCounter == 7) {
+                    newWeekLine = true;
+                    newWeekCounter = 0;
+                }
+                if (newWeekLine) {
+                    System.out.print("\n");
+                    newWeekLine = false;
+                }
+                if (day > 1 && day < 10) {
+                    System.out.print(" ");
+                }
+                System.out.print(calendar.format(dayFormat) + " ");
+                day++;
+                newWeekCounter++;
+            }
+        }
+        System.out.println("\n Calendar end date: " + calendar);
     }//Main
 }
