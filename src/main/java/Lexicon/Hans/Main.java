@@ -68,5 +68,9 @@ public class Main {
         //Exercise 12: Format a LocalTime with the pattern: 10:32:53.
         formatter = DateTimeFormatter.ofPattern("hh:mm:ss");
         System.out.println("\nPattern formatted time: " + currentTime.format(formatter));
+
+        //Exercise 13: Create a LocalDateTime with components as: 2018-04-05, 10:00.
+        LocalDateTime componentsDateTime = LocalDateTime.of(2018, 4, 5, 10, 0);
+        System.out.println("\nSpecified DateTime: " + componentsDateTime);
     }//Main
 }
