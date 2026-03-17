@@ -92,12 +92,14 @@ public class Main {
         DateTimeFormatter monthFormat = DateTimeFormatter.ofPattern("MMMM");
         DateTimeFormatter dayFormat = DateTimeFormatter.ofPattern("d");
         System.out.println("\nCalendar of year 2018.");
-        System.out.println("Start Date: " + calendar);
+        System.out.print("Start Date: " + calendar);
         for (int month=0; month<12; month++) {
-            System.out.println("\n" + calendar.format(monthFormat).toUpperCase() + " D:" + calendar.lengthOfMonth());
+            System.out.println("\n=====================");
+            System.out.println(calendar.format(monthFormat).toUpperCase());
             System.out.println("M  T  W  T  F  S  S");
             boolean newWeekLine = false;
             int newWeekCounter = 0;
+
             for (int day=1; day<calendar.lengthOfMonth()+1; calendar = calendar.plusDays(1)){
                 if (newWeekCounter == 7) {
                     newWeekLine = true;
@@ -107,10 +109,10 @@ public class Main {
                     System.out.print("\n");
                     newWeekLine = false;
                 }
-                if (day > 1 && day < 10) {
+                System.out.print(calendar.format(dayFormat) + " ");
+                if (day < 10) {
                     System.out.print(" ");
                 }
-                System.out.print(calendar.format(dayFormat) + " ");
                 day++;
                 newWeekCounter++;
             }
